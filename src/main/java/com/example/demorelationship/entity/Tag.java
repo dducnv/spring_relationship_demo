@@ -29,11 +29,4 @@ public class Tag implements Serializable {
     @ManyToMany(mappedBy = "tags", targetEntity = Post.class)
     @JsonIgnoreProperties("tags")
     List<Post> posts = new ArrayList<Post>();
-    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.MERGE, targetEntity = Account.class)
-    @JoinTable(
-            name = "user_tag_following",
-            joinColumns = @JoinColumn(name = "tag_id"),
-            inverseJoinColumns = @JoinColumn(name = "user_id"))
-    @JsonIgnoreProperties("tags")
-    List<Account> accounts = new ArrayList<Account>();
 }
