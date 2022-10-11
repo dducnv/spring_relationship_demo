@@ -19,7 +19,6 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Data
 @Entity
 @Table(name = "tags")
 public class Tag implements Serializable {
